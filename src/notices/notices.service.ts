@@ -13,7 +13,7 @@ export class NoticesService {
     getOne(id: number): Notice {
         const notice = this.notices.find(notice => notice.id === id);
         if (!notice) {
-            throw new NotFoundException(`Movie with ID ${id} not found.`);
+            throw new NotFoundException(`Notice with ID ${id} not found.`);
         }
         return notice;
     }
