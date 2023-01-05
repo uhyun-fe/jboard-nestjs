@@ -7,7 +7,9 @@ export class FbService {
     private fbs: Fb[] = [];
 
     getList(title: string, writer: string): Fb[] {
-        return this.fbs.filter(fb => (title ? fb.title.indexOf(title) >= 0 : true) && (writer ? fb.writer.indexOf(writer) >= 0 : true));
+        return this.fbs
+            .filter(fb => (title ? fb.title.indexOf(title) >= 0 : true) && (writer ? fb.writer.indexOf(writer) >= 0 : true))
+            .sort((a, b) => b.id - a.id);
     }
 
     getDetail(id: number): Fb {
